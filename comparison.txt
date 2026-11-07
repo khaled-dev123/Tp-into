@@ -1,0 +1,23 @@
+Comparison of the Two Architectures
+
+1. Coupling
+
+Workflow Orchestration: Higher coupling because all services depend on a central orchestrator.
+Event-Driven Architecture: Lower coupling because services communicate independently through events.
+
+Winner: Event-Driven Architecture.
+
+2. Scalability
+
+Workflow Orchestration: Moderate scalability because the central orchestrator may become a bottleneck.
+Event-Driven Architecture: High scalability because each service can scale independently.
+
+Winner: Event-Driven Architecture.
+
+3. Fault Tolerance
+
+Workflow Orchestration: If the orchestrator fails, the entire workflow may stop until it recovers.
+Event-Driven Architecture: If one service fails, other services can continue working, and events can be processed later.
+
+Winner: Event-Driven Architecture.
+

@@ -1,0 +1,27 @@
+University Internship Process – Orchestration Design
+1. Proposed Architecture
+
+I propose using a workflow orchestration approach to automate and coordinate the university internship process.
+
+A central workflow orchestrator manages the activities of the different actors, controls the execution sequence, tracks the process status, and ensures that all documents are stored in the university's Document Management System 
+
+2. Main Actors
+Student: Submits an internship request.
+Head of Department: Reviews and sends the request to the company.
+Company: Reviews and signs the documents.
+Faculty: Prepares and sends the internship agreement.
+Finance Department: Processes the payment.
+DMS: Stores all documents for future reference.
+Workflow Orchestrator: Coordinates all activities.
+
+3. Workflow Execution
+The student submits an internship request through the university portal.
+The orchestrator creates a workflow instance and stores the initial documents in the DMS.
+The orchestrator assigns a task to the Head of Department to send the request to the company.
+When the company signs the request, the signed document is stored in the DMS and the orchestrator triggers the next step.
+The Faculty prepares the internship agreement and sends it to the company.
+When the company signs the agreement, the signed document is archived in the DMS.
+The orchestrator sends a task to the Finance Department to process the payment.
+Finance processes the payment and updates its status.
+The orchestrator marks the workflow as completed.
+

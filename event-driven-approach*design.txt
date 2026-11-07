@@ -1,0 +1,64 @@
+Event-Driven Architecture for Internship Management
+
+
+The main components are:
+
+Department Head: Initiates the internship request.
+Faculty: Prepares and sends the internship agreement.
+Company: Receives and signs the documents.
+Finance Department: Processes the payment.
+Event Broker: Distributes events between services.
+DMS: Stores all documents for future reference.
+Notification Service: Sends notifications to concerned users.
+2. Workflow and Events
+Request creation: The Head of Department sends an internship request to the company. The event InternshipRequestCreated is generated, and the document is stored in the DMS.
+Request signed: The company signs the request. The event InternshipRequestSigned is generated, triggering the Faculty to prepare the internship agreement.
+Agreement creation: The Faculty prepares the internship agreement, stores it in the DMS, and sends it to the company. The event InternshipAgreementCreated is generated.
+Agreement signed: The company signs the agreement. The event InternshipAgreementSigned is generated and sent to the Finance Department.
+Payment: Finance retrieves the signed agreement from the DMS and processes the payment. The event PaymentProcessed is generated.
+
+All documents are stored in the DMS throughout the process.
+
+3. Event Flow Diagram
+text
+Head of Department
+        |
+        v
+Create Internship Request
+        |
+        v
+   Event Broker
+        |
+        v
+      Company
+        |
+        v
+   Request Signed
+        |
+        v
+      Faculty
+        |
+        v
+Prepare Internship Agreement
+        |
+        v
+      Company
+        |
+        v
+  Agreement Signed
+        |
+        v
+   Event Broker
+        |
+        v
+ Finance Department
+        |
+        v
+  Process Payment
+        |
+        v
+   PaymentProcessed
+
+
+DMS: Stores every document at each stage.
+
